@@ -85,6 +85,38 @@ char menu()
   // Finally, it returns the validated menu choice (e.g. ‘A’).
 }
 
+char gradeToChar(double grade)
+{
+  if(grade == 4)
+  {
+    return 'A';
+  }
+  else if(grade == 3)
+  {
+    return 'B';
+  }
+  else if(grade == 2)
+  {
+    return 'C';
+  }
+  else if(grade == 1)
+  {
+    return 'D';
+  }
+  else if(grade == 0)
+  {
+    return 'F';
+  }
+  else if (grade == -1)
+  {
+    return 'W';
+  }
+  else
+  {
+    cout << 'unhandled input call to gradeToChar' << endl;
+  }
+}
+
 int main ()
 {
   int const COURSE_MAX = 10;
@@ -324,7 +356,7 @@ int main ()
     }
     else if(menu_selector == "C" || menu_selector == "c")
     {
-      cout << "Total hours with D grades are " << DRule(courses, courseGrades, courseHours) << endl;
+      cout << "Total hours with D grades are " << DRule(courses, gradeToChar(courseGrades), courseHours) << endl;
     }
     else if(menu_selector == "D" || menu_selector == "d")
     {
