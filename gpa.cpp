@@ -36,8 +36,8 @@ double semesterGpa(int n, const string times[], const char grades[], const int h
       tempCreditHoursSum = tempCreditHoursSum + hours[courseNumber];
     }
   }
-  
-  return tempGradePointsSum / tempCreditHoursSum;
+
+  return (tempGradePointsSum / tempCreditHoursSum);
 }
 
 int DRule(int n, char grades[], int hours[])
