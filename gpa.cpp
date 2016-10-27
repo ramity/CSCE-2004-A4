@@ -51,7 +51,7 @@ void print(int n, string names[], string times[], string numbers[], char grades[
   // information. E.g.: name, time, number, grade, hours.
   // Also, the first line should be the number of courses
 
-  cout << "Displaying (" << courses << "/" << courses << ") courses." << endl;
+  cout << "Displaying (" << n << " of " << n << ") courses." << endl;
   cout << endl;
   cout << "Course Name" << setw(20) << "Semester" << setw(20) << "Course Number" << setw(20) << "Grade" << setw(20) << "Hour" << endl;
   //lists all courses
