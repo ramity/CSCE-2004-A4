@@ -324,7 +324,7 @@ int main ()
     }
     else if(menu_selector == "C" || menu_selector == "c")
     {
-      cout << "Total hours with D grades are " << Drule(courses, courseGrades, courseHours) << endl;
+      cout << "Total hours with D grades are " << DRule(courses, courseGrades, courseHours) << endl;
     }
     else if(menu_selector == "D" || menu_selector == "d")
     {
