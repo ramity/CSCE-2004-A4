@@ -360,7 +360,7 @@ int main ()
     }
     else if(menu_selector == "B" || menu_selector == "b")
     {
-      print(courses, courseNames, semesters, courseNumbers, courseGrades, courseHours);
+      print(courses, courseNames, semesters, courseNumbers, gradeToChar(courses,courseGrades), courseHours);
     }
     else if(menu_selector == "C" || menu_selector == "c")
     {
