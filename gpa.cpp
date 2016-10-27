@@ -30,7 +30,7 @@ double semesterGpa(int n, const string times[], const char grades[], const int h
 
   for(int courseNumber = 0; courseNumber < n; courseNumber++)
   {
-    if(times[courseNumber] == selectedSemester)
+    if(times[courseNumber] == semester)
     {
       tempGradePointsSum = tempGradePointsSum + (hours[courseNumber] * grades[courseNumber]);
       tempCreditHoursSum = tempCreditHoursSum + hours[courseNumber];
