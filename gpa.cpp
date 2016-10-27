@@ -87,7 +87,7 @@ char menu()
   // Finally, it returns the validated menu choice (e.g. ‘A’).
 }
 
-char * gradeToChar(int n,double grade[])
+char * gradeToChar(int n,int grade[])
 {
   char returnGrade[n];
 
@@ -170,8 +170,8 @@ int main ()
   string courseNumbers[COURSE_MAX] = "";
   //stores as numerical equiv of letter grade for easier calculation
   //typecasted as doubles to allow for easier calculation
-  double courseGrades[COURSE_MAX] = {0};
-  double courseHours[COURSE_MAX] = {0};
+  int courseGrades[COURSE_MAX] = {0};
+  int courseHours[COURSE_MAX] = {0};
 
   for(int step = 0;step < courses;step++)
   {
