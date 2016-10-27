@@ -89,31 +89,31 @@ char gradeToChar(double grade)
 {
   if(grade == 4)
   {
-    return 'A';
+    return "A";
   }
   else if(grade == 3)
   {
-    return 'B';
+    return "B";
   }
   else if(grade == 2)
   {
-    return 'C';
+    return "C";
   }
   else if(grade == 1)
   {
-    return 'D';
+    return "D";
   }
   else if(grade == 0)
   {
-    return 'F';
+    return "F";
   }
   else if (grade == -1)
   {
-    return 'W';
+    return "W";
   }
   else
   {
-    cout << 'unhandled input call to gradeToChar' << endl;
+    cout << "unhandled input call to gradeToChar" << endl;
   }
 }
 
