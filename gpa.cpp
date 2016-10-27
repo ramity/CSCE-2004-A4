@@ -5,6 +5,8 @@
 
 using namespace std;
 
+int const COURSE_MAX = 10;
+
 double gpa(int n, const char grades[], const int hours[])
 {
   // ‘n’ is the number of courses in the array (the size)
@@ -85,41 +87,45 @@ char menu()
   // Finally, it returns the validated menu choice (e.g. ‘A’).
 }
 
-char gradeToChar(double grade)
+char[] gradeToChar(int n,double[] grade)
 {
-  if(grade == 4)
+  returnGrade = [n];
+
+  for(int z=0;z<n;z++)
   {
-    return 'A';
-  }
-  else if(grade == 3)
-  {
-    return 'B';
-  }
-  else if(grade == 2)
-  {
-    return 'C';
-  }
-  else if(grade == 1)
-  {
-    return 'D';
-  }
-  else if(grade == 0)
-  {
-    return 'F';
-  }
-  else if (grade == -1)
-  {
-    return 'W';
-  }
-  else
-  {
-    cout << "unhandled input call to gradeToChar" << endl;
+    if(grade[z] == 4)
+    {
+      returnGrade[z] = 'A';
+    }
+    else if(grade[z]  == 3)
+    {
+      returnGrade[z] = 'B';
+    }
+    else if(grade[z]  == 2)
+    {
+      returnGrade[z] = 'C';
+    }
+    else if(grade[z]  == 1)
+    {
+      returnGrade[z] = 'D';
+    }
+    else if(grade[z]  == 0)
+    {
+      returnGrade[z] = 'F';
+    }
+    else if (grade[z]  == -1)
+    {
+      returnGrade[z] = 'W';
+    }
+    else
+    {
+      cout << "unhandled input call to gradeToChar" << endl;
+    }
   }
 }
 
 int main ()
 {
-  int const COURSE_MAX = 10;
   int courses = 0;
   double gpa = 0;
   string tempString = "";
@@ -356,7 +362,7 @@ int main ()
     }
     else if(menu_selector == "C" || menu_selector == "c")
     {
-      cout << "Total hours with D grades are " << DRule(courses, gradeToChar(courseGrades), courseHours) << endl;
+      cout << "Total hours with D grades are " << DRule(courses, gradeToChar(courses,courseGrades), courseHours) << endl;
     }
     else if(menu_selector == "D" || menu_selector == "d")
     {
