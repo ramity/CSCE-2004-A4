@@ -55,9 +55,9 @@ void print(int n, string names[], string times[], string numbers[], char grades[
   cout << endl;
   cout << "Course Name" << setw(20) << "Semester" << setw(20) << "Course Number" << setw(20) << "Grade" << setw(20) << "Hour" << endl;
   //lists all courses
-  for(int z = 0;z<courses;z++)
+  for(int z = 0;z<n;z++)
   {
-    cout << courseNames[z] << setw(20) << semesters[z] << setw(20) << courseNumbers[z] << setw(20) << courseGrades[z] << setw(20) << courseHours[z] << endl;
+    cout << names[z] << setw(20) << times[z] << setw(20) << numbers[z] << setw(20) << grades[z] << setw(20) << hours[z] << endl;
   }
 }
 
