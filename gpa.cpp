@@ -87,7 +87,7 @@ char menu()
   // Finally, it returns the validated menu choice (e.g. ‘A’).
 }
 
-char[] gradeToChar(int n,double[] grade)
+char * gradeToChar(int n,double[] grade)
 {
   char[] returnGrade = [n];
 
