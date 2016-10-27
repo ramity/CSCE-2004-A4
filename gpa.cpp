@@ -89,7 +89,7 @@ char menu()
 
 char * gradeToChar(int n,double grade[])
 {
-  char[] returnGrade = [n];
+  char returnGrade[n] = '';
 
   for(int z=0;z<n;z++)
   {
