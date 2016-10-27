@@ -25,6 +25,21 @@ double semesterGpa(int n, const string times[], const char grades[], const int h
   // ‘hours’ is an array of credit hours
   // The value of ‘semester’ contains the semester and
   // year for which we want to compute the gpa.
+  double tempGradePointsSum = 0;
+  double tempCreditHoursSum = 0;
+
+  for(int courseNumber = 0; courseNumber < n; courseNumber++)
+  {
+    if(times[courseNumber] == selectedSemester)
+    {
+      tempGradePointsSum = tempGradePointsSum + (hours[courseNumber] * grades[courseNumber]);
+      tempCreditHoursSum = tempCreditHoursSum + hours[courseNumber];
+    }
+  }
+
+  tempGPA = tempGradePointsSum / tempCreditHoursSum;
+
+  return tempGPA;
 }
 
 int DRule(int n, char grades[], int hours[])
@@ -396,19 +411,7 @@ int main ()
         }
         else
         {
-          double tempGradePointsSum = 0;
-          double tempCreditHoursSum = 0;
-
-          for(int courseNumber = 0; courseNumber < courses; courseNumber++)
-          {
-            if(semesters[courseNumber] == selectedSemester)
-            {
-              tempGradePointsSum = tempGradePointsSum + (courseHours[courseNumber] * courseGrades[courseNumber]);
-              tempCreditHoursSum = tempCreditHoursSum + courseHours[courseNumber];
-            }
-          }
-
-          tempGPA = tempGradePointsSum / tempCreditHoursSum;
+          semesterGpa(courses, semesters, gradeToChar(courses,courseGrades), courseHours, selectedSemester);
 
           valid_selection = true;
         }
