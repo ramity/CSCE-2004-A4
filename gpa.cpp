@@ -5,6 +5,86 @@
 
 using namespace std;
 
+double gpa(int n, const char grades[], const int hours[])
+{
+  // ‘n’ is the number of courses in the array (the size)
+  // ‘grades’ is an array of letter grades
+  // ‘hours’ is an array of credit hours
+  // The function returns the gpa calculated in the function.
+  // The basic idea and logic of the body of this function
+  // should be the similar to project 3.
+}
+
+double semesterGpa(int n, const string times[], const char grades[], const int hours[], string semester)
+{
+  // ‘n’ is the number of courses in the array (the size)
+  // ‘times’ is an array of semester and year a course was taken
+  // ‘grades’ is an array of letter grades
+  // ‘hours’ is an array of credit hours
+  // The value of ‘semester’ contains the semester and
+  // year for which we want to compute the gpa.
+}
+
+int DRule(int n, char grades[], int hours[])
+{
+  int calculation = 0;
+
+  for(int z = 0;z < n;z++)
+  {
+    if(grades[z] == 1)
+    {
+      calculation += hours[z];
+    }
+  }
+
+  return calculation;
+}
+
+void print(int n, string names[], string times[], string numbers[], char grades[], int hours[])
+{
+  // ‘names’ is an array of course names
+  // ‘numbers’ is an array of course numbers
+  // The meanings of all other parameters are similar to
+  // those in the earlier functions.
+  // The function lists all course information, one piece per
+  // line in the order in which the user entered the course
+  // information. E.g.: name, time, number, grade, hours.
+  // Also, the first line should be the number of courses
+
+  cout << "Displaying (" << courses << "/" << courses << ") courses." << endl;
+  cout << endl;
+  cout << "Course Name" << setw(20) << "Semester" << setw(20) << "Course Number" << setw(20) << "Grade" << setw(20) << "Hour" << endl;
+  //lists all courses
+  for(int z = 0;z<courses;z++)
+  {
+    cout << courseNames[z] << setw(20) << semesters[z] << setw(20) << courseNumbers[z] << setw(20) << courseGrades[z] << setw(20) << courseHours[z] << endl;
+  }
+}
+
+void getCourse(string& name, string& time, string& number, char& grade, int& hours, int n)
+{
+  // Get a new course from the user, and put the values into
+  // each of the function parameters.
+  // Note that since we must pass the value read in this
+  // function back to the caller, many parameters are passed
+  // by reference, the & after the type.
+  // ‘name’ for the course name.
+  // ‘time’ for when the course was taken.
+  // ‘number’ for course number.
+  // ‘grade’ for the letter grade of the course.
+  // ‘hours’ for credit hours of the course.
+  // ‘n’ for the next course count.
+}
+
+char menu()
+{
+  // This function does not have any parameters and returns a
+  // a character, which is the user’s menu choice.
+  // In this function, the menu is shown,
+  // then the user’s choice is read and validated.
+  // Finally, it returns the validated menu choice (e.g. ‘A’).
+}
+
 int main ()
 {
   int const COURSE_MAX = 10;
@@ -240,27 +320,11 @@ int main ()
     }
     else if(menu_selector == "B" || menu_selector == "b")
     {
-      cout << "Displaying (" << courses << "/" << courses << ") courses." << endl;
-      cout << endl;
-      cout << "Course Name" << setw(20) << "Semester" << setw(20) << "Course Number" << setw(20) << "Grade" << setw(20) << "Hour" << endl;
-      //lists all courses
-      for(int z = 0;z<courses;z++)
-      {
-        cout << courseNames[z] << setw(20) << semesters[z] << setw(20) << courseNumbers[z] << setw(20) << courseGrades[z] << setw(20) << courseHours[z] << endl;
-      }
+      //print(courses, courseNames, semesters, courseNumbers, courseGrades, courseHours);
     }
     else if(menu_selector == "C" || menu_selector == "c")
     {
-      int calculation = 0;
-      //Compute total credit hours of the courses with a queried user input
-      for(int z = 0;z<courses;z++)
-      {
-        if(courseGrades[z] == 1)
-        {
-          calculation = calculation + courseHours[z];
-        }
-      }
-      cout << "Total hours with D grades are " << calculation << endl;
+      cout << "Total hours with D grades are " << Drule(courses, courseGrades, courseHours) << endl;
     }
     else if(menu_selector == "D" || menu_selector == "d")
     {
