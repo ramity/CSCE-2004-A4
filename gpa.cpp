@@ -358,7 +358,7 @@ int main ()
 
     if(menu_selector == "A" || menu_selector == "a")
     {
-      cout << "Congratulations, your GPA was " << gpa(courses,courseGrades, courseHours); << endl;
+      cout << "Congratulations, your GPA was " << gpa(courses, courseGrades, courseHours) << endl;
     }
     else if(menu_selector == "B" || menu_selector == "b")
     {
