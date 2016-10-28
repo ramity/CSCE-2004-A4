@@ -41,11 +41,11 @@ double gpa(int n, const char grades[], const int hours[])
     }
     else if(grades[courseNumber] == 'F')
     {
-      tempGradePointRep = '0'
+      tempGradePointRep = '0';
     }
     else
     {
-      tempGradePointRep = '-1'
+      tempGradePointRep = '-1';
     }
 
     if(tempGradePointRep >= 0)
