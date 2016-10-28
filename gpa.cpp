@@ -68,13 +68,42 @@ double semesterGpa(int n, const string times[], const char grades[], const int h
   // year for which we want to compute the gpa.
   double tempGradePointsSum = 0;
   double tempCreditHoursSum = 0;
+  double tempGradePointRep = -1;
 
   for(int courseNumber = 0; courseNumber < n; courseNumber++)
   {
     if(times[courseNumber] == semester)
     {
-      tempGradePointsSum = tempGradePointsSum + (hours[courseNumber] * grades[courseNumber]);
-      tempCreditHoursSum = tempCreditHoursSum + hours[courseNumber];
+      if(grades[courseNumber] == 'A')
+      {
+        tempGradePointRep = 4;
+      }
+      else if(grades[courseNumber] == 'B')
+      {
+        tempGradePointRep = 3;
+      }
+      else if(grades[courseNumber] == 'C')
+      {
+        tempGradePointRep = 2;
+      }
+      else if(grades[courseNumber] == 'D')
+      {
+        tempGradePointRep = 1;
+      }
+      else if(grades[courseNumber] == 'F')
+      {
+        tempGradePointRep = 0;
+      }
+      else
+      {
+        tempGradePointRep = -1;
+      }
+
+      if(tempGradePointRep >= 0)
+      {
+        tempGradePointsSum += (hours[courseNumber] * tempGradePointRep);
+        tempCreditHoursSum += hours[courseNumber];
+      }
     }
   }
 
