@@ -159,9 +159,9 @@ void getCourse(string& name, string& time, string& number, char& grade, int& hou
   // ‘grade’ for the letter grade of the course.
   // ‘hours’ for credit hours of the course.
   // ‘n’ for the next course count.
-  valid_selection = false;
+  bool validSelection = false;
 
-  while(!valid_selection)
+  while(!validSelection)
   {
     cout << "Enter the course name (e.g. Programming Foundations I) for class number " << n << endl;
 
@@ -173,13 +173,13 @@ void getCourse(string& name, string& time, string& number, char& grade, int& hou
     }
     else
     {
-      valid_selection = true;
+      validSelection = true;
     }
   }
 
-  valid_selection = false;
+  validSelection = false;
 
-  while(!valid_selection)
+  while(!validSelection)
   {
     cout << "Enter the semester (e.g. Spring 2016) for class number " << n << endl;
 
@@ -191,13 +191,13 @@ void getCourse(string& name, string& time, string& number, char& grade, int& hou
     }
     else
     {
-      valid_selection = true;
+      validSelection = true;
     }
   }
 
-  valid_selection = false;
+  validSelection = false;
 
-  while(!valid_selection)
+  while(!validSelection)
   {
     cout << "Enter the course number (e.g. CSCE 2004) for class number " << n << endl;
 
@@ -209,13 +209,13 @@ void getCourse(string& name, string& time, string& number, char& grade, int& hou
     }
     else
     {
-      valid_selection = true;
+      validSelection = true;
     }
   }
 
-  valid_selection = false;
+  validSelection = false;
 
-  while(!valid_selection)
+  while(!validSelection)
   {
     cout << "Enter the grade (A,B,C,D,F,W,I) for class number " << n << endl;
 
@@ -227,37 +227,37 @@ void getCourse(string& name, string& time, string& number, char& grade, int& hou
     if(tempString == "A" || tempString == "a")
     {
       grade = 'A';
-      valid_selection = true;
+      validSelection = true;
     }
     else if(tempString == "B" || tempString == "b")
     {
       grade = 'B';
-      valid_selection = true;
+      validSelection = true;
     }
     else if(tempString == "C" || tempString == "c")
     {
       grade = 'C';
-      valid_selection = true;
+      validSelection = true;
     }
     else if(tempString == "D" || tempString == "d")
     {
       grade = 'D';
-      valid_selection = true;
+      validSelection = true;
     }
     else if(tempString == "F" || tempString == "f")
     {
       grade = 'F';
-      valid_selection = true;
+      validSelection = true;
     }
     else if(tempString == "W" || tempString == "w")
     {
       grade = 'W';
-      valid_selection = true;
+      validSelection = true;
     }
     else if(tempString == "I" || tempString == "i")
     {
       grade = 'I';
-      valid_selection = true;
+      validSelection = true;
     }
     else
     {
@@ -265,9 +265,9 @@ void getCourse(string& name, string& time, string& number, char& grade, int& hou
     }
   }
 
-  valid_selection = false;
+  validSelection = false;
 
-  while(!valid_selection)
+  while(!validSelection)
   {
     cout << "Enter the course hours (1 ... 5) for class number " << n << endl;
 
@@ -275,7 +275,7 @@ void getCourse(string& name, string& time, string& number, char& grade, int& hou
 
     if(hours >= 1 && hours <= 5)
     {
-      valid_selection = true;
+      validSelection = true;
     }
     else
     {
@@ -302,9 +302,9 @@ int main ()
 
   cout << "Welcome to PFI course management system v1" << endl;
 
-  bool valid_selection = false;
+  bool validSelection = false;
 
-  while(!valid_selection)
+  while(!validSelection)
   {
     cout << "Enter the number of classes for the system [1," << COURSE_MAX << "]" << endl;
 
@@ -320,7 +320,7 @@ int main ()
     {
       if(courses >=1 && courses <= COURSE_MAX)
       {
-        valid_selection = true;
+        validSelection = true;
       }
       else
       {
@@ -343,9 +343,9 @@ int main ()
 
   for(int step = 0;step < courses;step++)
   {
-    valid_selection = false;
+    validSelection = false;
 
-    while(!valid_selection)
+    while(!validSelection)
     {
       cout << "Enter the course name (e.g. Programming Foundations I) for your class number " << step + 1 << endl;
 
@@ -357,13 +357,13 @@ int main ()
       }
       else
       {
-        valid_selection = true;
+        validSelection = true;
       }
     }
 
-    valid_selection = false;
+    validSelection = false;
 
-    while(!valid_selection)
+    while(!validSelection)
     {
       cout << "Enter the semester (e.g. Spring 2016) for your class number " << step + 1 << endl;
 
@@ -375,13 +375,13 @@ int main ()
       }
       else
       {
-        valid_selection = true;
+        validSelection = true;
       }
     }
 
-    valid_selection = false;
+    validSelection = false;
 
-    while(!valid_selection)
+    while(!validSelection)
     {
       cout << "Enter the course number (e.g. CSCE 2004) for your class number" << step + 1 << endl;
 
@@ -393,13 +393,13 @@ int main ()
       }
       else
       {
-        valid_selection = true;
+        validSelection = true;
       }
     }
 
-    valid_selection = false;
+    validSelection = false;
 
-    while(!valid_selection)
+    while(!validSelection)
     {
       cout << "Enter the grade (A,B,C,D,F,W,I) for your class number" << step + 1 << endl;
 
@@ -411,37 +411,37 @@ int main ()
       if(tempString == "A" || tempString == "a")
       {
         courseGrades[step] = 'A';
-        valid_selection = true;
+        validSelection = true;
       }
       else if(tempString == "B" || tempString == "b")
       {
         courseGrades[step] = 'B';
-        valid_selection = true;
+        validSelection = true;
       }
       else if(tempString == "C" || tempString == "c")
       {
         courseGrades[step] = 'C';
-        valid_selection = true;
+        validSelection = true;
       }
       else if(tempString == "D" || tempString == "d")
       {
         courseGrades[step] = 'D';
-        valid_selection = true;
+        validSelection = true;
       }
       else if(tempString == "F" || tempString == "f")
       {
         courseGrades[step] = 'F';
-        valid_selection = true;
+        validSelection = true;
       }
       else if(tempString == "W" || tempString == "w")
       {
         courseGrades[step] = 'W';
-        valid_selection = true;
+        validSelection = true;
       }
       else if(tempString == "I" || tempString == "i")
       {
         courseGrades[step] = 'I';
-        valid_selection = true;
+        validSelection = true;
       }
       else
       {
@@ -449,9 +449,9 @@ int main ()
       }
     }
 
-    valid_selection = false;
+    validSelection = false;
 
-    while(!valid_selection)
+    while(!validSelection)
     {
       cout << "Enter the course hours (1 ... 5) for your class number" << (step + 1) << endl;
 
@@ -459,7 +459,7 @@ int main ()
 
       if(courseHours[step] >= 1 && courseHours[step] <= 5)
       {
-        valid_selection = true;
+        validSelection = true;
       }
       else
       {
@@ -476,9 +476,9 @@ int main ()
 
   while(true)
   {
-    valid_selection = false;
+    validSelection = false;
 
-    while(!valid_selection)
+    while(!validSelection)
     {
       cout << "Please enter the character next to the choice you wish to pick." << endl;
       cout << "Here are your options:" << endl;
@@ -493,17 +493,17 @@ int main ()
       getline(cin,menu_selector);
 
       if(menu_selector == "A" || menu_selector == "a")
-        valid_selection = true;
+        validSelection = true;
       else if(menu_selector == "B" || menu_selector == "b")
-        valid_selection = true;
+        validSelection = true;
       else if(menu_selector == "C" || menu_selector == "c")
-        valid_selection = true;
+        validSelection = true;
       else if(menu_selector == "D" || menu_selector == "d")
-        valid_selection = true;
+        validSelection = true;
       else if(menu_selector == "E" || menu_selector == "e")
-        valid_selection = true;
+        validSelection = true;
       else if(menu_selector == "Q" || menu_selector == "q")
-        valid_selection = true;
+        validSelection = true;
       else
         cout << "Invalid selection. Please try again.";
     }
@@ -522,13 +522,13 @@ int main ()
     }
     else if(menu_selector == "D" || menu_selector == "d")
     {
-      valid_selection = false;
+      validSelection = false;
 
       double tempGPA = 0;
       string selectedSemester = "";
       int semesterIndex;
 
-      while(!valid_selection)
+      while(!validSelection)
       {
         cout << "Please input desired semester for calculation" << endl;
 
@@ -550,7 +550,7 @@ int main ()
         }
         else
         {
-          valid_selection = true;
+          validSelection = true;
         }
       }
 
