@@ -21,31 +21,31 @@ double gpa(int n, const char grades[], const int hours[])
 
   double tempGradePointRep = -1;
 
-  for(int courseNumber = 0; courseNumber < courses; courseNumber++)
+  for(int courseNumber = 0; courseNumber < n; courseNumber++)
   {
     if(grades[courseNumber] == 'A')
     {
-      tempGradePointRep = '4';
+      tempGradePointRep = 4;
     }
     else if(grades[courseNumber] == 'B')
     {
-      tempGradePointRep = '3';
+      tempGradePointRep = 3;
     }
     else if(grades[courseNumber] == 'C')
     {
-      tempGradePointRep = '2';
+      tempGradePointRep = 2;
     }
     else if(grades[courseNumber] == 'D')
     {
-      tempGradePointRep = '1';
+      tempGradePointRep = 1;
     }
     else if(grades[courseNumber] == 'F')
     {
-      tempGradePointRep = '0';
+      tempGradePointRep = 0;
     }
     else
     {
-      tempGradePointRep = '-1';
+      tempGradePointRep = -1;
     }
 
     if(tempGradePointRep >= 0)
