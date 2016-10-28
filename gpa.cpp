@@ -293,6 +293,40 @@ char menu()
   // In this function, the menu is shown,
   // then the user’s choice is read and validated.
   // Finally, it returns the validated menu choice (e.g. ‘A’).
+  bool validSelection = false;
+  char menuSelector;
+
+  while(!validSelection)
+  {
+    cout << "Please enter the character next to the choice you wish to pick." << endl;
+    cout << "Here are your options:" << endl;
+    cout << "A(a) . Compute the GPA of all courses" << endl;
+    cout << "B(b) . List all courses" << endl;
+    cout << "C(c) . Compute the total credit hours of the courses with grade D" << endl;
+    cout << "D(d) . Compute the GPA for a particular semester" << endl;
+    cout << "E(e) . Add another course to the course list" << endl;
+    cout << "Q(q) . Quit the program" << endl;
+    cout << "Please choose one of the above" << endl;
+
+    getline(cin,menuSelector);
+
+    if(menuSelector == "A" || menuSelector == "a")
+      validSelection = true;
+    else if(menuSelector == "B" || menuSelector == "b")
+      validSelection = true;
+    else if(menuSelector == "C" || menuSelector == "c")
+      validSelection = true;
+    else if(menuSelector == "D" || menuSelector == "d")
+      validSelection = true;
+    else if(menuSelector == "E" || menuSelector == "e")
+      validSelection = true;
+    else if(menuSelector == "Q" || menuSelector == "q")
+      validSelection = true;
+    else
+      cout << "Invalid selection. Please try again.";
+  }
+
+  return menuSelector;
 }
 
 int main ()
@@ -470,57 +504,27 @@ int main ()
     cin.ignore();
   }
 
-  string menu_selector;
+  string menuSelector;
 
   cout << "Welcome to the interactive menu-driven part of the GPA and Course storage program." << endl;
 
   while(true)
   {
-    validSelection = false;
+    menuSelector = menu();
 
-    while(!validSelection)
-    {
-      cout << "Please enter the character next to the choice you wish to pick." << endl;
-      cout << "Here are your options:" << endl;
-      cout << "A(a) . Compute the GPA of all courses" << endl;
-      cout << "B(b) . List all courses" << endl;
-      cout << "C(c) . Compute the total credit hours of the courses with grade D" << endl;
-      cout << "D(d) . Compute the GPA for a particular semester" << endl;
-      cout << "E(e) . Add another course to the course list" << endl;
-      cout << "Q(q) . Quit the program" << endl;
-      cout << "Please choose one of the above" << endl;
-
-      getline(cin,menu_selector);
-
-      if(menu_selector == "A" || menu_selector == "a")
-        validSelection = true;
-      else if(menu_selector == "B" || menu_selector == "b")
-        validSelection = true;
-      else if(menu_selector == "C" || menu_selector == "c")
-        validSelection = true;
-      else if(menu_selector == "D" || menu_selector == "d")
-        validSelection = true;
-      else if(menu_selector == "E" || menu_selector == "e")
-        validSelection = true;
-      else if(menu_selector == "Q" || menu_selector == "q")
-        validSelection = true;
-      else
-        cout << "Invalid selection. Please try again.";
-    }
-
-    if(menu_selector == "A" || menu_selector == "a")
+    if(menuSelector == "A" || menuSelector == "a")
     {
       cout << "Congratulations, your GPA was " << gpa(courses, courseGrades, courseHours) << endl;
     }
-    else if(menu_selector == "B" || menu_selector == "b")
+    else if(menuSelector == "B" || menuSelector == "b")
     {
       print(courses, courseNames, semesters, courseNumbers, courseGrades, courseHours);
     }
-    else if(menu_selector == "C" || menu_selector == "c")
+    else if(menuSelector == "C" || menuSelector == "c")
     {
       cout << "Total hours with D grades are " << DRule(courses, courseGrades, courseHours) << endl;
     }
-    else if(menu_selector == "D" || menu_selector == "d")
+    else if(menuSelector == "D" || menuSelector == "d")
     {
       validSelection = false;
 
@@ -556,7 +560,7 @@ int main ()
 
       cout << "Congratulations, your GPA was " << semesterGpa(courses, semesters, courseGrades, courseHours, selectedSemester) << " in " << selectedSemester << endl;
     }
-    else if(menu_selector == "E" || menu_selector == "e")
+    else if(menuSelector == "E" || menuSelector == "e")
     {
       if(courses + 1 < COURSE_MAX)
       {
@@ -571,7 +575,7 @@ int main ()
         cout << "Unable to add more than 10 classes" << endl;
       }
     }
-    else if(menu_selector == "Q" || menu_selector == "q")
+    else if(menuSelector == "Q" || menuSelector == "q")
     {
       //"escapes all logic"
       return 0;
