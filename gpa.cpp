@@ -219,7 +219,7 @@ void getCourse(string& name, string& time, string& number, char& grade, int& hou
   {
     cout << "Enter the grade (A,B,C,D,F,W,I) for class number " << n << endl;
 
-    tempString = "";
+    string tempString = "";
 
     getline(cin,tempString);
 
