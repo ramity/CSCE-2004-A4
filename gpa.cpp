@@ -15,6 +15,48 @@ double gpa(int n, const char grades[], const int hours[])
   // The function returns the gpa calculated in the function.
   // The basic idea and logic of the body of this function
   // should be the similar to project 3.
+
+  double tempGradePointsSum = 0;
+  double tempCreditHoursSum = 0;
+
+  double tempGradePointRep = -1;
+
+  for(int courseNumber = 0; courseNumber < courses; courseNumber++)
+  {
+    if(grades[courseNumber] == 'A')
+    {
+      tempGradePointRep = '4';
+    }
+    else if(grades[courseNumber] == 'B')
+    {
+      tempGradePointRep = '3';
+    }
+    else if(grades[courseNumber] == 'C')
+    {
+      tempGradePointRep = '2';
+    }
+    else if(grades[courseNumber] == 'D')
+    {
+      tempGradePointRep = '1';
+    }
+    else if(grades[courseNumber] == 'F')
+    {
+      tempGradePointRep = '0'
+    }
+    else
+    {
+      tempGradePointRep = '-1'
+    }
+
+    if(tempGradePointRep >= 0)
+    {
+      tempGradePointsSum += (hours[courseNumber] * tempGradePointRep);
+      tempCreditHoursSum += hours[courseNumber];
+    }
+  }
+
+  //display/calculate gpa
+  return (tempGradePointsSum / tempCreditHoursSum);
 }
 
 double semesterGpa(int n, const string times[], const char grades[], const int hours[], string semester)
@@ -316,21 +358,7 @@ int main ()
 
     if(menu_selector == "A" || menu_selector == "a")
     {
-      double tempGradePointsSum = 0;
-      double tempCreditHoursSum = 0;
-
-      for(int courseNumber = 0; courseNumber < courses; courseNumber++)
-      {
-        if(courseGrades[courseNumber] >= 0)
-        {
-          tempGradePointsSum = tempGradePointsSum + (courseHours[courseNumber] * courseGrades[courseNumber]);
-          tempCreditHoursSum = tempCreditHoursSum + courseHours[courseNumber];
-        }
-      }
-
-      gpa = tempGradePointsSum / tempCreditHoursSum;
-      //display/calculate gpa
-      cout << "Congratulations, your GPA was " << gpa << endl;
+      cout << "Congratulations, your GPA was " << gpa(courses,courseGrades, courseHours); << endl;
     }
     else if(menu_selector == "B" || menu_selector == "b")
     {
@@ -370,13 +398,11 @@ int main ()
         }
         else
         {
-          semesterGpa(courses, semesters, courseGrades, courseHours, selectedSemester);
-
           valid_selection = true;
         }
       }
 
-      cout << "Congratulations, your GPA was " << tempGPA << " in " << selectedSemester << endl;
+      cout << "Congratulations, your GPA was " << semesterGpa(courses, semesters, courseGrades, courseHours, selectedSemester) << " in " << selectedSemester << endl;
     }
     else if(menu_selector == "E" || menu_selector == "e")
     {
