@@ -310,17 +310,17 @@ char menu()
 
     getline(cin,menuSelector);
 
-    if(menuSelector == "A" || menuSelector == "a")
+    if(menuSelector == 'A' || menuSelector == 'a')
       validSelection = true;
-    else if(menuSelector == "B" || menuSelector == "b")
+    else if(menuSelector == 'B' || menuSelector == 'b')
       validSelection = true;
-    else if(menuSelector == "C" || menuSelector == "c")
+    else if(menuSelector == 'C' || menuSelector == 'c')
       validSelection = true;
-    else if(menuSelector == "D" || menuSelector == "d")
+    else if(menuSelector == 'D' || menuSelector == 'd')
       validSelection = true;
-    else if(menuSelector == "E" || menuSelector == "e")
+    else if(menuSelector == 'E' || menuSelector == 'e')
       validSelection = true;
-    else if(menuSelector == "Q" || menuSelector == "q")
+    else if(menuSelector == 'Q' || menuSelector == 'q')
       validSelection = true;
     else
       cout << "Invalid selection. Please try again.";
