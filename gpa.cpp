@@ -146,7 +146,7 @@ void print(int n, string names[], string times[], string numbers[], char grades[
   }
 }
 
-void getCourse(string& name, string& time, string& number, char& grade, int& hours, int n)
+void getCourse(string& name, string& time, string& number, char& grade, int& hours, int& n)
 {
   // Get a new course from the user, and put the values into
   // each of the function parameters.
@@ -160,6 +160,8 @@ void getCourse(string& name, string& time, string& number, char& grade, int& hou
   // ‘hours’ for credit hours of the course.
   // ‘n’ for the next course count.
   bool validSelection = false;
+
+  n++;
 
   while(!validSelection)
   {
@@ -583,10 +585,6 @@ int main ()
     {
       if(courses + 1 < COURSE_MAX)
       {
-        courses++;
-
-        //Add another course to the course list
-
         getCourse(courseNames[courses], semesters[courses], courseNumbers[courses], courseGrades[courses], courseHours[courses], courses);
       }
       else
