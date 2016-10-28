@@ -18,7 +18,6 @@ double gpa(int n, const char grades[], const int hours[])
 
   double tempGradePointsSum = 0;
   double tempCreditHoursSum = 0;
-  double tempGpaCalc = 0;
   double tempGradePointRep = -1;
 
   for(int courseNumber = 0; courseNumber < n; courseNumber++)
@@ -55,10 +54,8 @@ double gpa(int n, const char grades[], const int hours[])
     }
   }
 
-  tempGpaCalc = (tempGradePointsSum / tempCreditHoursSum)
-
   //display/calculate gpa
-  return tempGpaCalc;
+  return (tempGradePointsSum / tempCreditHoursSum);
 }
 
 double semesterGpa(int n, const string times[], const char grades[], const int hours[], string semester)
