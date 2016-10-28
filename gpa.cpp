@@ -100,45 +100,6 @@ char menu()
   // Finally, it returns the validated menu choice (e.g. ‘A’).
 }
 
-char * gradeToChar(int n,int grade[])
-{
-  char returnGrade[n];
-
-  for(int z=0;z<n;z++)
-  {
-    if(grade[z] == 4)
-    {
-      returnGrade[z] = 'A';
-    }
-    else if(grade[z]  == 3)
-    {
-      returnGrade[z] = 'B';
-    }
-    else if(grade[z]  == 2)
-    {
-      returnGrade[z] = 'C';
-    }
-    else if(grade[z]  == 1)
-    {
-      returnGrade[z] = 'D';
-    }
-    else if(grade[z]  == 0)
-    {
-      returnGrade[z] = 'F';
-    }
-    else if (grade[z]  == -1)
-    {
-      returnGrade[z] = 'W';
-    }
-    else
-    {
-      cout << "unhandled input call to gradeToChar" << endl;
-    }
-  }
-
-  return returnGrade;
-}
-
 int main ()
 {
   int courses = 0;
@@ -183,7 +144,7 @@ int main ()
   string courseNumbers[COURSE_MAX] = "";
   //stores as numerical equiv of letter grade for easier calculation
   //typecasted as doubles to allow for easier calculation
-  int courseGrades[COURSE_MAX] = {0};
+  char courseGrades[COURSE_MAX] = {0};
   int courseHours[COURSE_MAX] = {0};
 
   for(int step = 0;step < courses;step++)
@@ -255,37 +216,37 @@ int main ()
 
       if(tempString == "A" || tempString == "a")
       {
-        courseGrades[step] = 4;
+        courseGrades[step] = 'A';
         valid_selection = true;
       }
       else if(tempString == "B" || tempString == "b")
       {
-        courseGrades[step] = 3;
+        courseGrades[step] = 'B';
         valid_selection = true;
       }
       else if(tempString == "C" || tempString == "c")
       {
-        courseGrades[step] = 2;
+        courseGrades[step] = 'C';
         valid_selection = true;
       }
       else if(tempString == "D" || tempString == "d")
       {
-        courseGrades[step] = 1;
+        courseGrades[step] = 'D';
         valid_selection = true;
       }
       else if(tempString == "F" || tempString == "f")
       {
-        courseGrades[step] = 0;
+        courseGrades[step] = 'F';
         valid_selection = true;
       }
       else if(tempString == "W" || tempString == "w")
       {
-        courseGrades[step] = -1;
+        courseGrades[step] = 'W';
         valid_selection = true;
       }
       else if(tempString == "I" || tempString == "i")
       {
-        courseGrades[step] = -1;
+        courseGrades[step] = 'I';
         valid_selection = true;
       }
       else
@@ -373,11 +334,11 @@ int main ()
     }
     else if(menu_selector == "B" || menu_selector == "b")
     {
-      print(courses, courseNames, semesters, courseNumbers, gradeToChar(courses,courseGrades), courseHours);
+      print(courses, courseNames, semesters, courseNumbers, courseGrades, courseHours);
     }
     else if(menu_selector == "C" || menu_selector == "c")
     {
-      cout << "Total hours with D grades are " << DRule(courses, gradeToChar(courses,courseGrades), courseHours) << endl;
+      cout << "Total hours with D grades are " << DRule(courses, courseGrades, courseHours) << endl;
     }
     else if(menu_selector == "D" || menu_selector == "d")
     {
@@ -409,7 +370,7 @@ int main ()
         }
         else
         {
-          semesterGpa(courses, semesters, gradeToChar(courses,courseGrades), courseHours, selectedSemester);
+          semesterGpa(courses, semesters, courseGrades, courseHours, selectedSemester);
 
           valid_selection = true;
         }
@@ -492,37 +453,37 @@ int main ()
 
           if(tempString == "A" || tempString == "a")
           {
-            courseGrades[courses] = 4;
+            courseGrades[courses] = 'A';
             valid_selection = true;
           }
           else if(tempString == "B" || tempString == "b")
           {
-            courseGrades[courses] = 3;
+            courseGrades[courses] = 'B';
             valid_selection = true;
           }
           else if(tempString == "C" || tempString == "c")
           {
-            courseGrades[courses] = 2;
+            courseGrades[courses] = 'C';
             valid_selection = true;
           }
           else if(tempString == "D" || tempString == "d")
           {
-            courseGrades[courses] = 1;
+            courseGrades[courses] = 'D';
             valid_selection = true;
           }
           else if(tempString == "F" || tempString == "f")
           {
-            courseGrades[courses] = 0;
+            courseGrades[courses] = 'F';
             valid_selection = true;
           }
           else if(tempString == "W" || tempString == "w")
           {
-            courseGrades[courses] = -1;
+            courseGrades[courses] = 'W';
             valid_selection = true;
           }
           else if(tempString == "I" || tempString == "i")
           {
-            courseGrades[courses] = -1;
+            courseGrades[courses] = 'I';
             valid_selection = true;
           }
           else
