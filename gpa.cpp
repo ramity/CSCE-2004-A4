@@ -295,6 +295,7 @@ char menu()
   // Finally, it returns the validated menu choice (e.g. ‘A’).
   bool validSelection = false;
   char menuSelector;
+  string tempString = '';
 
   while(!validSelection)
   {
@@ -308,20 +309,38 @@ char menu()
     cout << "Q(q) . Quit the program" << endl;
     cout << "Please choose one of the above" << endl;
 
-    getline(cin,menuSelector);
+    getline(cin,tempString);
 
-    if(menuSelector == 'A' || menuSelector == 'a')
+    if(tempString == "A" || tempString == "a")
+    {
       validSelection = true;
-    else if(menuSelector == 'B' || menuSelector == 'b')
+      menuSelector = 'B';
+    }
+    else if(tempString == "B" || tempString == "b")
+    {
       validSelection = true;
-    else if(menuSelector == 'C' || menuSelector == 'c')
+      menuSelector = 'C';
+    }
+    else if(tempString == "C" || tempString == "c")
+    {
       validSelection = true;
-    else if(menuSelector == 'D' || menuSelector == 'd')
+      menuSelector = 'C';
+    }
+    else if(tempString == "D" || tempString == "d")
+    {
       validSelection = true;
-    else if(menuSelector == 'E' || menuSelector == 'e')
+      menuSelector = 'D';
+    }
+    else if(tempString == "E" || tempString == "e")
+    {
       validSelection = true;
-    else if(menuSelector == 'Q' || menuSelector == 'q')
+      menuSelector = 'E';
+    }
+    else if(tempString == "Q" || tempString == "q")
+    {
       validSelection = true;
+      menuSelector = 'Q';
+    }
     else
       cout << "Invalid selection. Please try again.";
   }
