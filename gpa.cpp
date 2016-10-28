@@ -314,12 +314,12 @@ char menu()
     if(tempString == "A" || tempString == "a")
     {
       validSelection = true;
-      menuSelector = 'B';
+      menuSelector = 'A';
     }
     else if(tempString == "B" || tempString == "b")
     {
       validSelection = true;
-      menuSelector = 'C';
+      menuSelector = 'B';
     }
     else if(tempString == "C" || tempString == "c")
     {
