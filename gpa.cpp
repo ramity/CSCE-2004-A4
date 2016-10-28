@@ -295,7 +295,7 @@ char menu()
   // Finally, it returns the validated menu choice (e.g. ‘A’).
   bool validSelection = false;
   char menuSelector;
-  string tempString = '';
+  string tempString;
 
   while(!validSelection)
   {
