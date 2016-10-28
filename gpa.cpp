@@ -144,7 +144,6 @@ char menu()
 int main ()
 {
   int courses = 0;
-  double gpa = 0;
   string tempString = "";
 
   cout << "Welcome to PFI course management system v1" << endl;
